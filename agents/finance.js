@@ -1,6 +1,3 @@
-const BUDGET_MCP_URL =
-  process.env.BUDGET_MCP_URL || "http://192.168.6.11:3002/mcp";
-
 export const financeAgent = {
   description:
     "Finance specialist — handles questions about budgets, transactions, spending, bills, and money. Use this agent for anything related to personal finances.",
@@ -14,7 +11,7 @@ Format currency with £ symbol. When listing transactions, use a clean table or 
     {
       budget: {
         type: "http",
-        url: BUDGET_MCP_URL,
+        url: "http://192.168.6.11:3002/mcp",
       },
     },
   ],

@@ -35,6 +35,12 @@ Return the specialist's response directly to the user without adding commentary.
     if (message.type === "result") {
       result = message;
       if (message.subtype === "success") {
+        if (message.modelUsage) {
+          console.log("\n  [model breakdown]");
+          for (const [model, usage] of Object.entries(message.modelUsage)) {
+            console.log(`    ${model}: $${usage.costUSD.toFixed(4)} (${usage.inputTokens + usage.outputTokens} tokens)`);
+          }
+        }
         return {
           success: true,
           text: message.result,

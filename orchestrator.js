@@ -14,10 +14,13 @@ export async function orchestrate(question) {
 Available specialists:
 - **finance**: Budgets, transactions, spending, bills, and anything money-related.
 
-When a question matches a specialist's domain, delegate to them using the Agent tool.
+When a question matches a specialist's domain:
+1. First, tell the user which agent you're handing over to, e.g. "Handing over to the finance agent..."
+2. Then delegate using the Agent tool.
+3. Return the specialist's response directly without adding commentary.
+
 If no specialist matches, say so and list what you can help with.
-Always pass the user's full question to the specialist — don't summarize or reword it.
-Return the specialist's response directly to the user without adding commentary.`,
+Always pass the user's full question to the specialist — don't summarize or reword it.`,
       allowedTools: ["Agent"],
       agents: { finance: financeAgent },
       permissionMode: "bypassPermissions",

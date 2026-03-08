@@ -1,0 +1,15 @@
+{
+  "name": "orchestrator",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Multi-agent orchestrator — routes questions to specialist sub-agents",
+  "scripts": {
+    "start": "node server.js",
+    "cli": "node cli.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/claude-agent-sdk": "^0.1.0",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2"
+  }
+}

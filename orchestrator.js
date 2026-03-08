@@ -8,7 +8,7 @@ export async function orchestrate(question) {
   for await (const message of query({
     prompt: question,
     options: {
-      model: "claude-sonnet-4-5-20250929",
+      model: "claude-haiku-4-5-20251001",
       systemPrompt: `You are a helpful home assistant that routes requests to specialist agents.
 
 Available specialists:
